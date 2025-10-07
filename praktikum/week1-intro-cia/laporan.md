@@ -1,3 +1,8 @@
+Minggu ke-: 1
+Topik: Intro CIA
+Nama: Mohammad Nasrulloh
+NIM: 230202815
+Kelas: 5IKRB
 # Laporan Minggu 1
 
 ## Langkah 1 — Ringkasan Sejarah Kriptografi
