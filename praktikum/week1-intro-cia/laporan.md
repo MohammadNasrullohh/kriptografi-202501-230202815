@@ -5,7 +5,7 @@ NIM: 230202815
 Kelas: 5IKRB
 # Laporan Minggu 1
 
-## Langkah 1 — Ringkasan Sejarah Kriptografi
+Ringkasan Sejarah Kriptografi
 Kriptografi telah digunakan sejak zaman kuno untuk menjaga kerahasiaan pesan.  
 Pada **era klasik**, metode seperti **Caesar Cipher** dan **Vigenère Cipher** digunakan untuk menyamarkan pesan dengan cara pergeseran huruf atau penggunaan kunci berulang.  
 
@@ -15,7 +15,7 @@ Pada era **kontemporer**, kriptografi diaplikasikan dalam **blockchain** dan **c
 
 ---
 
-## Langkah 2 — Prinsip CIA
+Prinsip CIA
 1. **Confidentiality (Kerahasiaan)**  
    Menjaga agar data hanya bisa diakses oleh pihak berwenang.  
    *Contoh:* WhatsApp menggunakan enkripsi end-to-end agar pesan hanya dapat dibaca pengirim dan penerima.
@@ -30,13 +30,13 @@ Pada era **kontemporer**, kriptografi diaplikasikan dalam **blockchain** dan **c
 
 ---
 
-## Langkah 3 — Dokumentasi
+Dokumentasi
 Bukti setup repository GitHub:  
 ![Setup GitHub](screenshots/repo_setup.png)
 
 ---
 
-## Langkah 4 — Quiz Singkat
+Quiz Singkat
 1. **Siapa tokoh yang dianggap sebagai bapak kriptografi modern?**  
    Claude Shannon.
 
