@@ -1,95 +1,109 @@
-# Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+# Laporan Praktikum Kriptografi 📜
 
----
+## **Minggu ke-:** 2 **Topik:** Caesar Cipher / Cryptosystem
 
-## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+**Nama:** Mohammad Nasrulloh
+**NIM:** 230202815
+**Kelas:** 2IKRA
 
----
+-----
 
-## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+## 1\. Tujuan
 
----
+  - Memahami prinsip dasar **enkripsi** dan **dekripsi** menggunakan algoritma **Caesar Cipher**.
+  - Mengimplementasikan Caesar Cipher menggunakan bahasa pemrograman **Python**.
+  - Mengamati hasil enkripsi dan dekripsi dari teks input yang diberikan.
 
-## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+-----
 
----
+## 2\. Dasar Teori
 
-## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+Kriptografi adalah ilmu yang mempelajari teknik untuk menjaga kerahasiaan pesan agar hanya pihak yang berwenang dapat membacanya. Salah satu bentuk kriptografi klasik adalah **cipher substitusi**, di mana setiap huruf dalam teks diganti dengan huruf lain berdasarkan aturan tertentu.
 
----
+Algoritma **Caesar Cipher** adalah cipher substitusi sederhana yang menggeser setiap huruf dalam *plaintext* sejauh *$k$* posisi pada alfabet. Operasi ini menggunakan konsep **modular aritmetika**, sehingga huruf tetap berada dalam rentang A–Z atau a–z. Misalnya, jika **kunci** (*key*) = 3, huruf A akan menjadi D, B menjadi E, dan seterusnya.
 
-## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+-----
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+## 3\. Alat dan Bahan
 
----
+Alat dan bahan yang digunakan dalam praktikum ini meliputi:
 
-## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+1.  **Perangkat Lunak:**
+      * Python 3.x
+      * Visual Studio Code / editor teks lainnya
+      * Git dan akun GitHub
+      * Library Python standar (tidak memerlukan *library* tambahan seperti *pycryptodome* untuk Caesar Cipher dasar).
+2.  **Struktur Proyek:**
+      * Folder proyek: `week2-cryptosystem/`
+          * `src/caesar_cipher.py`
 
-Hasil eksekusi program Caesar Cipher:
+-----
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+## 4\. Langkah Percobaan
 
----
+Langkah-langkah yang dilakukan dalam praktikum adalah sebagai berikut:
 
-## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
----
+1.  Masuk ke direktori proyek `week2-cryptosystem`.
 
-## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+2.  Membuat *file* implementasi Python bernama `caesar_cipher.py` di dalam *folder* `src/`.
 
----
+3.  Menyalin atau menulis kode implementasi Caesar Cipher ke dalam *file* tersebut.
 
-## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+4.  Menjalankan program melalui *Command Prompt* (CMD) atau *terminal* dengan perintah:
 
----
+    ```bash
+    python src\caesar_cipher.py
+    ```
 
-## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+-----
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
-```
+## 5\. Hasil dan Pembahasan
+
+### 5.1. Hasil Eksekusi Program
+
+Berikut adalah contoh hasil eksekusi program Caesar Cipher dengan teks input dan kunci tertentu:
+| Proses | Teks Input | Kunci | Teks Output |
+| :---: | :---: | :---: | :---: |
+| Enkripsi | `HELLO` | 3 | `KHOOR` |
+| Dekripsi | `KHOOR` | 3 | `HELLO` |
+| Enkripsi | `praktikum` | 5 | `uwflwzprx` |
+| Dekripsi | `uwflwzprx` | 5 | `praktikum` |
+
+### 5.2. Pembahasan
+
+Program berhasil mengenkripsi teks input (*plaintext*) menjadi *ciphertext* dan mendekripsinya kembali menjadi *plaintext* awal, sesuai dengan kunci geser yang diberikan.
+
+  * Fungsi **`encrypt()`** berhasil menerapkan prinsip pergeseran huruf Caesar Cipher dan konsep **modular aritmetika** untuk memastikan huruf yang digeser tetap berada dalam batas alfabet (A–Z atau a–z).
+  * Fungsi **`decrypt()`** berhasil melakukan operasi invers (kebalikan) dari enkripsi, yang membuktikan algoritma **Caesar Cipher** diimplementasikan dengan benar.
+  * Contoh **`HELLO`** dengan kunci **3** menghasilkan **`KHOOR`**, dan berhasil didekripsi kembali menjadi **`HELLO`**, menunjukkan fungsi *encrypt* dan *decrypt* bekerja sesuai ekspektasi tanpa *error*.
+
+-----
+
+## 6\. Jawaban Pertanyaan
+
+### Pertanyaan 1: Apa perbedaan Caesar Cipher dan Vigenère Cipher?
+
+**Jawaban:**
+Perbedaan utama terletak pada penggunaan kuncinya:
+
+  * **Caesar Cipher** menggunakan **satu kunci numerik tetap** (*shift*) untuk seluruh pesan, menjadikannya *monoalfabetik*.
+  * **Vigenère Cipher** menggunakan **kata kunci** (*keyphrase*). Setiap huruf dari kata kunci tersebut menghasilkan pergeseran yang berbeda untuk setiap huruf *plaintext*, menjadikannya **polialfabetik** (lebih kuat).
+
+### Pertanyaan 2: Apa kelemahan utama Caesar Cipher?
+
+**Jawaban:**
+Kelemahan utamanya adalah **mudah dipecahkan** (ditembus). Karena hanya memiliki $25$ kemungkinan kunci pergeseran yang valid ($1$ sampai $25$), penyerang dapat dengan mudah menggunakan metode ***brute force*** (mencoba semua kemungkinan kunci) untuk mendekripsi pesan dalam waktu yang sangat singkat.
+
+-----
+
+## 7\. Kesimpulan
+
+Percobaan ini membuktikan bahwa algoritma **Caesar Cipher** dapat diimplementasikan dan digunakan untuk mengenkripsi serta mendekripsi teks dengan benar menggunakan Python. Implementasi ini berhasil menunjukkan aplikasi praktis dari prinsip **cipher substitusi** sederhana dan konsep **modular aritmetika** dalam kriptografi klasik. Program bekerja sesuai ekspektasi dan dapat menjadi dasar untuk mempelajari algoritma kriptografi yang lebih kompleks.
+
+-----
+
+## 8\. Daftar Pustaka
+
+1.  Katz, J., & Lindell, Y. *(Tahun Publikasi)*. **Introduction to Modern Cryptography**.
+2.  Stallings, W. *(Tahun Publikasi)*. **Cryptography and Network Security**.
+3.  Modul Praktikum Kriptografi – Politeknik Negeri Semarang (2025).
