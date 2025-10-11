@@ -69,6 +69,8 @@ Berikut adalah contoh hasil eksekusi program Caesar Cipher dengan teks input dan
 | Enkripsi | `praktikum` | 5 | `uwflwzprx` |
 | Dekripsi | `uwflwzprx` | 5 | `praktikum` |
 
+![hasil](screenshots/bukti.png)
+
 ### 5.2. Pembahasan
 
 Program berhasil mengenkripsi teks input (*plaintext*) menjadi *ciphertext* dan mendekripsinya kembali menjadi *plaintext* awal, sesuai dengan kunci geser yang diberikan.
