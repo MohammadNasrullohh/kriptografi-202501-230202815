@@ -79,7 +79,7 @@ if __name__ == "__main__":
     print("Decrypted :", dec)
 ```
 ##  4. Hasil Eksekusi
-![Hasil eksekusi](screenshots/hasil_eksekusi.png)
+![Hasil eksekusi](screenshots/hasil_eksekusi)
 
 ## 5. Klasifikasi Kriptosistem
 
@@ -102,19 +102,19 @@ Digunakan dalam pengiriman kunci atau komunikasi aman di internet (misalnya HTTP
 
 # 5. Pertanyaan Diskusi
 
-** Sebutkan komponen utama dalam sebuah kriptosistem.**  
+**Sebutkan komponen utama dalam sebuah kriptosistem.**  
 **Jawab:** Plaintext, Ciphertext, Kunci, dan Algoritma.
 
 ---
 
-** Apa kelebihan dan kelemahan sistem simetris dibandingkan asimetris?**
+**Apa kelebihan dan kelemahan sistem simetris dibandingkan asimetris?**
 
 - **Kelebihan:** Proses enkripsi dan dekripsi lebih cepat serta efisien untuk data besar.  
 - **Kelemahan:** Distribusi kunci menjadi masalah karena harus dibagikan secara aman kepada pihak lain.
 
 ---
 
-** Mengapa distribusi kunci menjadi masalah utama dalam kriptografi simetris?**  
+**Mengapa distribusi kunci menjadi masalah utama dalam kriptografi simetris?**  
 **Jawab:** Karena jika kunci diketahui oleh pihak yang tidak berwenang, maka pesan terenkripsi dapat dengan mudah dibuka. Oleh karena itu, distribusi kunci perlu dilakukan melalui saluran yang aman atau menggunakan sistem asimetris.
 
 ---
