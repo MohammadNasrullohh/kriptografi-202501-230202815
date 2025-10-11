@@ -1,111 +1,122 @@
-# Laporan Praktikum Kriptografi 📜
+# Laporan Praktikum Week 2 — Cryptosystem
 
-## **Minggu ke-:** 2 **Topik:** Caesar Cipher / Cryptosystem
+## Identitas
+**Nama:** Mohammad Nasrulloh  
+**NIM:** 230202815  
+**Kelas:** 2IKRB  
+**Mata Kuliah:** Kriptografi  
+**Topik:** Cryptosystem (Komponen, Enkripsi & Dekripsi, Simetris & Asimetris)
 
-**Nama:** Mohammad Nasrulloh
-**NIM:** 230202815
-**Kelas:** 2IKRA
+---
 
------
+## Tujuan Pembelajaran
+Setelah mengikuti praktikum ini, mahasiswa diharapkan mampu:
+1. Mengidentifikasi komponen dasar kriptosistem (plaintext, ciphertext, kunci, algoritma).  
+2. Menggambarkan proses enkripsi dan dekripsi sederhana.  
+3. Mengklasifikasikan jenis kriptosistem (simetris dan asimetris).  
 
-## 1\. Tujuan
+---
 
-  - Memahami prinsip dasar **enkripsi** dan **dekripsi** menggunakan algoritma **Caesar Cipher**.
-  - Mengimplementasikan Caesar Cipher menggunakan bahasa pemrograman **Python**.
-  - Mengamati hasil enkripsi dan dekripsi dari teks input yang diberikan.
+## 1. Komponen Dasar Kriptosistem
+Sebuah **kriptosistem** terdiri dari beberapa komponen utama sebagai berikut:
 
------
+| Komponen | Deskripsi |
+|-----------|------------|
+| **Plaintext** | Pesan asli yang ingin dikirim atau disimpan sebelum dienkripsi. |
+| **Ciphertext** | Pesan hasil enkripsi yang tidak dapat dibaca tanpa kunci. |
+| **Kunci (Key)** | Nilai rahasia yang digunakan dalam proses enkripsi dan dekripsi. |
+| **Algoritma** | Metode matematis untuk mengubah plaintext menjadi ciphertext dan sebaliknya. |
 
-## 2\. Dasar Teori
+---
 
-Kriptografi adalah ilmu yang mempelajari teknik untuk menjaga kerahasiaan pesan agar hanya pihak yang berwenang dapat membacanya. Salah satu bentuk kriptografi klasik adalah **cipher substitusi**, di mana setiap huruf dalam teks diganti dengan huruf lain berdasarkan aturan tertentu.
+## 2. Skema Dasar Kriptosistem
 
-Algoritma **Caesar Cipher** adalah cipher substitusi sederhana yang menggeser setiap huruf dalam *plaintext* sejauh *$k$* posisi pada alfabet. Operasi ini menggunakan konsep **modular aritmetika**, sehingga huruf tetap berada dalam rentang A–Z atau a–z. Misalnya, jika **kunci** (*key*) = 3, huruf A akan menjadi D, B menjadi E, dan seterusnya.
+Proses enkripsi dan dekripsi dapat dijelaskan melalui diagram berikut:
 
------
+![Diagram Kriptosistem](screenshots/diagram_kriptosistem.png)
 
-## 3\. Alat dan Bahan
+Keterangan:
+- **Enkripsi:** Plaintext diubah menjadi Ciphertext menggunakan algoritma dan kunci.  
+- **Dekripsi:** Ciphertext diubah kembali menjadi Plaintext menggunakan algoritma dan kunci yang sama (atau berbeda tergantung jenis sistemnya).
 
-Alat dan bahan yang digunakan dalam praktikum ini meliputi:
+---
 
-1.  **Perangkat Lunak:**
-      * Python 3.x
-      * Visual Studio Code / editor teks lainnya
-      * Git dan akun GitHub
-      * Library Python standar (tidak memerlukan *library* tambahan seperti *pycryptodome* untuk Caesar Cipher dasar).
-2.  **Struktur Proyek:**
-      * Folder proyek: `week2-cryptosystem/`
-          * `src/caesar_cipher.py`
+## 3. Implementasi Program Enkripsi dan Dekripsi
 
------
+Program berikut merupakan simulasi **Caesar Cipher**, yaitu algoritma substitusi sederhana dengan pergeseran huruf sebanyak nilai kunci tertentu.
 
-## 4\. Langkah Percobaan
+### File: `src/simple_crypto.py`
+```python
+def encrypt(plaintext, key):
+    result = ""
+    for char in plaintext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift + key) % 26 + shift)
+        else:
+            result += char
+    return result
 
-Langkah-langkah yang dilakukan dalam praktikum adalah sebagai berikut:
+def decrypt(ciphertext, key):
+    result = ""
+    for char in ciphertext:
+        if char.isalpha():
+            shift = 65 if char.isupper() else 97
+            result += chr((ord(char) - shift - key) % 26 + shift)
+        else:
+            result += char
+    return result
 
-1.  Masuk ke direktori proyek `week2-cryptosystem`.
+if __name__ == "__main__":
+    message = "Cryptosystem Test"
+    key = 5
 
-2.  Membuat *file* implementasi Python bernama `caesar_cipher.py` di dalam *folder* `src/`.
+    enc = encrypt(message, key)
+    dec = decrypt(enc, key)
 
-3.  Menyalin atau menulis kode implementasi Caesar Cipher ke dalam *file* tersebut.
+    print("Plaintext :", message)
+    print("Ciphertext:", enc)
+    print("Decrypted :", dec)
 
-4.  Menjalankan program melalui *Command Prompt* (CMD) atau *terminal* dengan perintah:
+##  4. Hasil Eksekusi
+![Hasil eksekusi](screenshots/hasil_eksekusi
 
-    ```bash
-    python src\caesar_cipher.py
-    ```
+## 5. Klasifikasi Kriptosistem
 
------
+| Jenis     | Deskripsi                                                                                                              | Contoh Algoritma |
+|------------|------------------------------------------------------------------------------------------------------------------------|------------------|
+| **Simetris**   | Menggunakan kunci yang sama untuk proses enkripsi dan dekripsi. Lebih cepat dan efisien, tetapi distribusi kunci menjadi tantangan utama. | AES, DES |
+| **Asimetris**  | Menggunakan dua kunci berbeda: kunci publik untuk enkripsi dan kunci privat untuk dekripsi. Lebih aman untuk komunikasi terbuka. | RSA, ECC |
 
-## 5\. Hasil dan Pembahasan
+---
 
-### 5.1. Hasil Eksekusi Program
+### Penjelasan Tambahan
 
-Berikut adalah contoh hasil eksekusi program Caesar Cipher dengan teks input dan kunci tertentu:
-| Proses | Teks Input | Kunci | Teks Output |
-| :---: | :---: | :---: | :---: |
-| Enkripsi | `HELLO` | 3 | `KHOOR` |
-| Dekripsi | `KHOOR` | 3 | `HELLO` |
-| Enkripsi | `praktikum` | 5 | `uwfpynpzr` |
-| Dekripsi | `uwfpynpzr` | 5 | `praktikum` |
+**Kriptografi Simetris:**  
+Efisien untuk data besar, digunakan dalam penyimpanan atau komunikasi tertutup (misalnya antar server).
 
-![hasil](screenshots/bukti.png)
+**Kriptografi Asimetris:**  
+Digunakan dalam pengiriman kunci atau komunikasi aman di internet (misalnya HTTPS).
 
-### 5.2. Pembahasan
+---
 
-Program berhasil mengenkripsi teks input (*plaintext*) menjadi *ciphertext* dan mendekripsinya kembali menjadi *plaintext* awal, sesuai dengan kunci geser yang diberikan.
+# 5. Pertanyaan Diskusi
 
-  * Fungsi **`encrypt()`** berhasil menerapkan prinsip pergeseran huruf Caesar Cipher dan konsep **modular aritmetika** untuk memastikan huruf yang digeser tetap berada dalam batas alfabet (A–Z atau a–z).
-  * Fungsi **`decrypt()`** berhasil melakukan operasi invers (kebalikan) dari enkripsi, yang membuktikan algoritma **Caesar Cipher** diimplementasikan dengan benar.
-  * Contoh **`HELLO`** dengan kunci **3** menghasilkan **`KHOOR`**, dan berhasil didekripsi kembali menjadi **`HELLO`**, menunjukkan fungsi *encrypt* dan *decrypt* bekerja sesuai ekspektasi tanpa *error*.
+** Sebutkan komponen utama dalam sebuah kriptosistem.**  
+**Jawab:** Plaintext, Ciphertext, Kunci, dan Algoritma.
 
------
+---
 
-## 6\. Jawaban Pertanyaan
+** Apa kelebihan dan kelemahan sistem simetris dibandingkan asimetris?**
 
-### Pertanyaan 1: Apa perbedaan Caesar Cipher dan Vigenère Cipher?
+- **Kelebihan:** Proses enkripsi dan dekripsi lebih cepat serta efisien untuk data besar.  
+- **Kelemahan:** Distribusi kunci menjadi masalah karena harus dibagikan secara aman kepada pihak lain.
 
-**Jawaban:**
-Perbedaan utama terletak pada penggunaan kuncinya:
+---
 
-  * **Caesar Cipher** menggunakan **satu kunci numerik tetap** (*shift*) untuk seluruh pesan, menjadikannya *monoalfabetik*.
-  * **Vigenère Cipher** menggunakan **kata kunci** (*keyphrase*). Setiap huruf dari kata kunci tersebut menghasilkan pergeseran yang berbeda untuk setiap huruf *plaintext*, menjadikannya **polialfabetik** (lebih kuat).
+** Mengapa distribusi kunci menjadi masalah utama dalam kriptografi simetris?**  
+**Jawab:** Karena jika kunci diketahui oleh pihak yang tidak berwenang, maka pesan terenkripsi dapat dengan mudah dibuka. Oleh karena itu, distribusi kunci perlu dilakukan melalui saluran yang aman atau menggunakan sistem asimetris.
 
-### Pertanyaan 2: Apa kelemahan utama Caesar Cipher?
+---
 
-**Jawaban:**
-Kelemahan utamanya adalah **mudah dipecahkan** (ditembus). Karena hanya memiliki $25$ kemungkinan kunci pergeseran yang valid ($1$ sampai $25$), penyerang dapat dengan mudah menggunakan metode ***brute force*** (mencoba semua kemungkinan kunci) untuk mendekripsi pesan dalam waktu yang sangat singkat.
 
------
-
-## 7\. Kesimpulan
-
-Percobaan ini membuktikan bahwa algoritma **Caesar Cipher** dapat diimplementasikan dan digunakan untuk mengenkripsi serta mendekripsi teks dengan benar menggunakan Python. Implementasi ini berhasil menunjukkan aplikasi praktis dari prinsip **cipher substitusi** sederhana dan konsep **modular aritmetika** dalam kriptografi klasik. Program bekerja sesuai ekspektasi dan dapat menjadi dasar untuk mempelajari algoritma kriptografi yang lebih kompleks.
-
------
-
-## 8\. Daftar Pustaka
-
-1.  Katz, J., & Lindell, Y. *(Tahun Publikasi)*. **Introduction to Modern Cryptography**.
-2.  Stallings, W. *(Tahun Publikasi)*. **Cryptography and Network Security**.
-3.  Modul Praktikum Kriptografi – Politeknik Negeri Semarang (2025).
