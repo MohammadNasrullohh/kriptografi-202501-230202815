@@ -77,9 +77,9 @@ if __name__ == "__main__":
     print("Plaintext :", message)
     print("Ciphertext:", enc)
     print("Decrypted :", dec)
-
+```
 ##  4. Hasil Eksekusi
-![Hasil eksekusi](screenshots/hasil_eksekusi
+![Hasil eksekusi](screenshots/hasil_eksekusi)
 
 ## 5. Klasifikasi Kriptosistem
 
