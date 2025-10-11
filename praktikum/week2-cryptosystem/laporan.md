@@ -66,8 +66,8 @@ Berikut adalah contoh hasil eksekusi program Caesar Cipher dengan teks input dan
 | :---: | :---: | :---: | :---: |
 | Enkripsi | `HELLO` | 3 | `KHOOR` |
 | Dekripsi | `KHOOR` | 3 | `HELLO` |
-| Enkripsi | `praktikum` | 5 | `uwflwzprx` |
-| Dekripsi | `uwflwzprx` | 5 | `praktikum` |
+| Enkripsi | `praktikum` | 5 | `uwfpynpzr` |
+| Dekripsi | `uwfpynpzr` | 5 | `praktikum` |
 
 ![hasil](screenshots/bukti.png)
 
