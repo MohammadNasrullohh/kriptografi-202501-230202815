@@ -79,7 +79,7 @@ if __name__ == "__main__":
     print("Decrypted :", dec)
 ```
 ##  4. Hasil Eksekusi
-![Hasil eksekusi](screenshots/hasil_eksekusi)
+![Hasil eksekusi](screenshots/hasil_eksekusi.png)
 
 ## 5. Klasifikasi Kriptosistem
 
