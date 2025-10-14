@@ -1,95 +1,69 @@
-# Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+# Week 3 - Modular Math, GCD, dan Logaritma Diskrit
+
+**Nama:** Mohammad Nasrulloh  
+**NIM:** 230202815  
+**Kelas:** 2IKRA  
 
 ---
 
-## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+## 1. Teori Singkat
 
----
-
-## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
-
----
-
-## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
-
----
-
-## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
-
----
-
-## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
-
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
-
----
-
-## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
-
-Hasil eksekusi program Caesar Cipher:
-
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
-
----
-
-## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
----
-
-## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
-
----
-
-## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
+### 🔹 Aritmetika Modular
+Aritmetika modular adalah sistem operasi matematika dengan hasil sisa pembagian.  
 Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+`7 + 5 (mod 12) = 0` karena 12 membagi habis 12.
+
+Operasi modular umum digunakan dalam **kriptografi**, misalnya pada RSA untuk operasi pangkat dan invers modular.
+
+### 🔹 GCD & Algoritma Euclidean
+**GCD (Greatest Common Divisor)** adalah bilangan terbesar yang dapat membagi dua bilangan tanpa sisa.  
+Algoritma Euclidean menghitungnya dengan iterasi pembagian berulang hingga sisa nol.
+
+### 🔹 Extended Euclidean & Invers Modular
+Digunakan untuk mencari invers `a⁻¹` dalam modulus `n`, di mana `(a * a⁻¹) mod n = 1`.  
+Invers modular penting untuk **dekripsi kunci publik RSA**.
+
+### 🔹 Logaritma Diskrit
+Masalah logaritma diskrit mencari `x` sehingga `a^x ≡ b (mod n)`.  
+Masalah ini sulit untuk modulus besar dan menjadi dasar keamanan algoritma seperti **Diffie-Hellman** dan **ElGamal**.
 
 ---
 
-## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+## 2. Hasil Pengujian
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
-```
+| Operasi | Input | Hasil |
+|----------|--------|--------|
+| mod_add  | 7 + 5 mod 12 | 0 |
+| mod_mul  | 7 × 5 mod 12 | 11 |
+| mod_exp  | 7^128 mod 13 | 3 |
+| gcd      | gcd(54, 24) | 6 |
+| modinv   | Invers 3 mod 11 | 4 |
+| discrete_log | 3^x ≡ 4 (mod 7) | x = 4 |
+
+📸 *Lihat hasil eksekusi pada folder screenshots/hasil.png*
+
+---
+
+## 3. Jawaban Pertanyaan Diskusi
+
+1. **Apa peran aritmetika modular dalam kriptografi modern?**  
+   Modular arithmetic menjaga operasi tetap dalam ruang terbatas, yang membuat proses enkripsi/dekripsi aman dan efisien.
+
+2. **Mengapa invers modular penting dalam algoritma kunci publik (misalnya RSA)?**  
+   Karena digunakan untuk menghitung kunci privat, di mana `d` adalah invers dari `e` (mod φ(n)).
+
+3. **Apa tantangan utama dalam menyelesaikan logaritma diskrit untuk modulus besar?**  
+   Kompleksitas komputasi yang sangat tinggi; tidak ada algoritma efisien yang bisa menyelesaikannya dengan cepat, sehingga menjadi dasar keamanan sistem kriptografi modern.
+
+---
+
+## 4. Kesimpulan
+Dalam praktikum ini dipelajari:
+- Operasi modular (penjumlahan, perkalian, eksponensial).
+- GCD dan Extended Euclidean Algorithm.
+- Invers modular dan penerapannya di kriptografi.
+- Logaritma diskrit sederhana sebagai dasar keamanan sistem kunci publik.
+
+---
+
+**Commit message:**  
