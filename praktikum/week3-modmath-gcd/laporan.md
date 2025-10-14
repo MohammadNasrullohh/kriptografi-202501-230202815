@@ -40,7 +40,9 @@ Masalah ini sulit untuk modulus besar dan menjadi dasar keamanan algoritma seper
 | modinv   | Invers 3 mod 11 | 4 |
 | discrete_log | 3^x ≡ 4 (mod 7) | x = 4 |
 
-📸 *Lihat hasil eksekusi pada folder screenshots/hasil.png*
+📸 **Hasil Eksekusi Program:**
+![Hasil Eksekusi](./screenshots/hasil.png)
+
 
 ---
 
@@ -65,5 +67,3 @@ Dalam praktikum ini dipelajari:
 - Logaritma diskrit sederhana sebagai dasar keamanan sistem kunci publik.
 
 ---
-
-**Commit message:**  
