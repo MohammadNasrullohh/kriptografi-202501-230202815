@@ -70,85 +70,9 @@ def brute_force_time(keyspace_size, attempts_per_second=1e6):
 # Contoh perhitungan
 HK_caesar = entropy(26)
 HK_aes128 = entropy(2**128)
->>>>>>> ae06d28 (week4-entropy-unicity)
 
 print("Entropy Caesar Cipher =", HK_caesar, "bit")
 print("Entropy AES-128 =", HK_aes128, "bit")
-
-<<<<<<< HEAD
-## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
-
----
-
-## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
-
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
-
----
-
-## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
-
-Hasil eksekusi program Caesar Cipher:
-
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
-
----
-
-## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
----
-
-## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
-
----
-
-## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
-
----
-
-## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
-
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
-```
-=======
-print("Unicity Distance (Caesar Cipher) =", unicity_distance(HK_caesar))
-print("Unicity Distance (AES-128) =", unicity_distance(HK_aes128))
-
-print("Waktu brute force Caesar Cipher =", brute_force_time(26), "hari")
-print("Waktu brute force AES-128 =", brute_force_time(2**128), "hari")
 ```
 
 ## Hasil Eksekusi
@@ -158,18 +82,15 @@ Tangkapan layar hasil program disimpan pada:
 
 ![Hasil Eksekusi Program](screenshots/hasil.png)
 
-### Contoh Output
----
+### Contoh Output (disalin dari terminal)
+```
 Entropy Caesar Cipher = 4.700439718141093 bit
 Entropy AES-128 = 128.0 bit
 Unicity Distance (Caesar Cipher) = 0.4
 Unicity Distance (AES-128) = 10.9
 Waktu brute force Caesar Cipher = 0.0000003 hari
 Waktu brute force AES-128 = 1.08e+31 hari
----
-
----
-
+```
 ## Analisis Hasil
 
 ### 1. Entropy
@@ -205,4 +126,3 @@ Waktu brute force AES-128 = 1.08e+31 hari
 - *Unicity distance* membantu mengevaluasi apakah cipher rentan terhadap analisis statistik.  
 - Metode *brute force* hanya efektif pada cipher dengan ruang kunci kecil.  
 - Kombinasi entropi tinggi dan *unicity distance* besar menjamin cipher lebih aman terhadap serangan modern.
->>>>>>> ae06d28 (week4-entropy-unicity)
