@@ -82,15 +82,6 @@ Tangkapan layar hasil program disimpan pada:
 
 ![Hasil Eksekusi Program](screenshots/hasil.png)
 
-### Contoh Output (disalin dari terminal)
-```
-Entropy Caesar Cipher = 4.700439718141093 bit
-Entropy AES-128 = 128.0 bit
-Unicity Distance (Caesar Cipher) = 0.4
-Unicity Distance (AES-128) = 10.9
-Waktu brute force Caesar Cipher = 0.0000003 hari
-Waktu brute force AES-128 = 1.08e+31 hari
-```
 ## Analisis Hasil
 
 ### 1. Entropy
