@@ -65,12 +65,12 @@ shared_secret_B = pow(A, b, p)
 
 print("Kunci bersama Alice :", shared_secret_A)
 print("Kunci bersama Bob   :", shared_secret_B)
-
+```
 # 4. Hasil Eksekusi Program
 
 Berikut hasil eksekusi program (disimpan pada screenshots/hasil.png):
 
-![Hasil Eksekusi](screenshots/hasil.png)
+![Hasil Eksekusi](src/hasil.png)
 
 ## 5. Simulasi Serangan MITM (Man-in-the-Middle)
 
