@@ -79,7 +79,7 @@ except (ValueError, TypeError):
 
 ## 6. Hasil dan Pembahasan
 
-![Hasil Eksekusi](src/hasil.png)
+![Hasil Eksekusi](screenshots/hasil.png)
 
 **Hasil eksekusi program:**
 - Signature berhasil dibuat menggunakan *private key* RSA 2048 bit.  
