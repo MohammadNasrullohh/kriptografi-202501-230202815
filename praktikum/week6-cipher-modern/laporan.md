@@ -64,7 +64,7 @@ decrypted = decipher.decrypt(ciphertext)
 print("Decrypted:", decrypted)
 ```
 ### DES
-![Hasil DES](screenshots/dsa.png)
+![Hasil DES](screenshots/des.png)
 ### AES
 ```
 from Crypto.Cipher import AES
