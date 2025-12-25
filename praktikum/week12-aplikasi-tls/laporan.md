@@ -115,3 +115,13 @@ TLS/SSL merupakan komponen vital dalam keamanan email dan e‑commerce. Penerapa
 ## Referensi
 
 * Stallings, W. (2017). *Cryptography and Network Security*, Bab 15.
+
+## Commit Log
+
+```
+commit week12-aplikasi-tls
+Author: Mohammad Nasrulloh <srullasrul59@gmail.com>
+Date:   2025-12-25
+
+    week12-aplikasi-tls: Aplikasi TLS & E-commerce
+```
