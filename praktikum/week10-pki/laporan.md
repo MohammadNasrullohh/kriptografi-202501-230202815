@@ -3,7 +3,7 @@
 
 **Nama:** Mohammad Nasrulloh  
 **NIM:** 230202815  
-**Kelas:** 2IKRA  
+**Kelas:** 5IKRA  
 **Mata Kuliah:** Kriptografi  
 **Topik:** Public Key Infrastructure (PKI) & Certificate Authority  
 
@@ -55,8 +55,6 @@ Program berhasil menghasilkan file sertifikat digital:
 
 ### Hasil 2 – File Sertifikat Berhasil Dibuat
 ![File Sertifikat cert.pem](screenshots/hasil2.png)
-
-Screenshot hasil eksekusi program disimpan pada folder `screenshots/hasil.png`.
 
 ---
 
