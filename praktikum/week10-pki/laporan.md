@@ -3,7 +3,7 @@
 
 **Nama:** Mohammad Nasrulloh  
 **NIM:** 230202815  
-**Kelas:** 2IKRA  
+**Kelas:** 5IKRA  
 **Mata Kuliah:** Kriptografi  
 **Topik:** Public Key Infrastructure (PKI) & Certificate Authority  
 
