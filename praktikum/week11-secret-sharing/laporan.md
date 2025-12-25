@@ -53,6 +53,24 @@ Pada praktikum ini digunakan library `secretsharing` untuk melakukan pembagian d
 - Rahasia berhasil direkonstruksi kembali menggunakan minimal threshold share.
 - Rekonstruksi gagal jika jumlah share kurang dari threshold.
 
+### Source Code Implementasi (Menggunakan Library)
+```python
+from secretsharing import SecretSharer
+
+secret_text = "KriptografiUPB2025"
+
+secret_hex = secret_text.encode("utf-8").hex()
+
+# Membagi rahasia menjadi 5 share dengan threshold 3
+shares = SecretSharer.split_secret(secret_hex, 3, 5)
+print("Shares:", shares)
+
+recovered_hex = SecretSharer.recover_secret(shares[:3])
+
+recovered_text = bytes.fromhex(recovered_hex).decode("utf-8")
+print("Recovered secret:", recovered_text)
+```
+
 ![Hasil](screenshots/hasil.png)
 ---
 
