@@ -1,95 +1,116 @@
-# Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+# Praktikum Week 12 — Aplikasi TLS & E‑Commerce
+
+**Nama**: Mohammad Nasrulloh
+**NIM**: 230202815
+**Kelas**: 5IKRA
+**Mata Kuliah**: Kriptografi
 
 ---
 
-## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+## Pendahuluan
+
+Transport Layer Security (TLS) merupakan protokol kriptografi yang digunakan untuk mengamankan komunikasi data di jaringan, terutama pada email dan web (HTTPS). Dalam praktik e‑commerce, TLS berperan penting untuk melindungi data sensitif seperti kredensial login, informasi pribadi, dan data pembayaran. Praktikum ini bertujuan untuk menganalisis penerapan SSL/TLS pada email dan e‑commerce serta mengevaluasi isu etika dan privasi yang muncul.
 
 ---
 
-## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+## Studi Kasus Penerapan SSL/TLS
+
+### 1. Analisis SSL/TLS pada Website E‑Commerce
+
+Observasi dilakukan menggunakan browser (Chrome) dengan memeriksa sertifikat digital pada dua website e‑commerce populer di Indonesia.
+
+#### a. Tokopedia ([https://www.tokopedia.com](https://www.tokopedia.com))
+
+* **Issuer (CA)**: DigiCert Inc
+* **Masa Berlaku**: ± 1 tahun
+* **Algoritma Kriptografi**:
+
+  * Public Key: RSA / ECDSA
+  * Enkripsi Simetris: AES‑128 / AES‑256
+  * Hash: SHA‑256
+* **Status Keamanan**: HTTPS aktif, koneksi terenkripsi dan tervalidasi
+![Sertifikat SSL Tokopedia](screenshots/tokopedia.png)
+
+#### b. Shopee ([https://shopee.co.id](https://shopee.co.id))
+
+* **Issuer (CA)**: DigiCert Inc
+* **Masa Berlaku**: ± 1 tahun
+* **Algoritma Kriptografi**:
+
+  * Public Key: RSA / ECDSA
+  * Enkripsi Simetris: AES‑128 / AES‑256
+  * Hash: SHA‑256
+* **Status Keamanan**: HTTPS aktif, koneksi aman
+![Sertifikat SSL Shopee](screenshots/shopee.png)
+
+#### Perbandingan HTTPS vs HTTP
+
+| Aspek                | HTTP           | HTTPS       |
+| -------------------- | -------------- | ----------- |
+| Enkripsi             | Tidak ada      | Ada (TLS)   |
+| Keamanan Data        | Rentan disadap | Terlindungi |
+| Sertifikat Digital   | Tidak ada      | Ada (CA)    |
+| Kepercayaan Pengguna | Rendah         | Tinggi      |
+
+Website tanpa HTTPS sangat rentan terhadap penyadapan dan manipulasi data.
 
 ---
 
-## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+### 2. Enkripsi dalam Transaksi E‑Commerce
+
+Pada proses login dan pembayaran di e‑commerce:
+
+* Data username, password, dan OTP dienkripsi menggunakan TLS.
+* Informasi pembayaran (nomor kartu, token pembayaran) diamankan dengan enkripsi simetris (AES).
+* TLS mencegah serangan **Man‑in‑the‑Middle (MITM)** dengan verifikasi sertifikat.
+
+**Ancaman jika TLS tidak digunakan**:
+
+* Pencurian akun
+* Penyadapan data kartu kredit
+* Manipulasi transaksi
+* Phishing dan spoofing
 
 ---
 
-## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+## Analisis Etika & Privasi
+
+### 1. Isu Privasi pada Email Terenkripsi
+
+Teknologi seperti **PGP** dan **S/MIME** memungkinkan email dienkripsi end‑to‑end sehingga hanya pengirim dan penerima yang dapat membaca isi pesan. Hal ini melindungi privasi, tetapi juga menimbulkan tantangan bagi organisasi dan pemerintah.
+
+### 2. Dilema Etika
+
+* **Audit Email Karyawan**
+  Perusahaan memiliki kepentingan keamanan, namun membuka email terenkripsi karyawan tanpa izin melanggar privasi.
+
+* **Pengawasan Pemerintah**
+  Enkripsi melindungi warga, tetapi menyulitkan penegakan hukum dalam kasus kejahatan siber. Hal ini memunculkan dilema antara keamanan nasional dan hak privasi individu.
 
 ---
 
-## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+## Jawaban Pertanyaan Diskusi
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+### 1. Perbedaan Utama HTTP dan HTTPS
 
----
+HTTP tidak menggunakan enkripsi sehingga data dikirim dalam bentuk plaintext. HTTPS menggunakan TLS untuk mengenkripsi data, menjamin kerahasiaan, integritas, dan autentikasi.
 
-## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
+### 2. Pentingnya Sertifikat Digital dalam TLS
 
-Hasil eksekusi program Caesar Cipher:
+Sertifikat digital memastikan identitas server yang sah dan mencegah pemalsuan website. Sertifikat dikeluarkan oleh Certificate Authority (CA) yang dipercaya.
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+### 3. Kriptografi, Privasi, dan Tantangan Etika
+
+Kriptografi melindungi privasi komunikasi digital, namun menimbulkan tantangan hukum dan etika terkait pengawasan, penegakan hukum, dan tanggung jawab organisasi.
 
 ---
 
-## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
----
+## Kesimpulan
 
-## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+TLS/SSL merupakan komponen vital dalam keamanan email dan e‑commerce. Penerapannya meningkatkan kepercayaan pengguna dan melindungi data sensitif. Namun, penggunaan kriptografi juga harus diimbangi dengan kebijakan etika dan hukum yang adil agar privasi tetap terjaga.
 
 ---
 
-## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+## Referensi
 
----
-
-## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
-
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
-```
+* Stallings, W. (2017). *Cryptography and Network Security*, Bab 15.
