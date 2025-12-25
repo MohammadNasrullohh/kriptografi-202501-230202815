@@ -79,6 +79,8 @@ except (ValueError, TypeError):
 
 ## 6. Hasil dan Pembahasan
 
+![Hasil Eksekusi](screenshots/hasil.png)
+
 **Hasil eksekusi program:**
 - Signature berhasil dibuat menggunakan *private key* RSA 2048 bit.  
 - Verifikasi pesan asli berhasil → menunjukkan bahwa tanda tangan valid.  
