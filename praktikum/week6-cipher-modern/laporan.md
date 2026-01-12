@@ -3,7 +3,7 @@ Minggu ke-: 6
 Topik: Cipher Modern (DES, AES, RSA)  
 Nama: Mohammad Nasrulloh  
 NIM: 230202815
-Kelas: 5IKRA
+Kelas: 5IKRB
 
 ---
 

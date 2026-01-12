@@ -3,7 +3,7 @@ Minggu ke-: 9
 Topik: Digital Signature (RSA/DSA)
 Nama: Mohammad Nasrulloh
 NIM: 230202815
-Kelas: 5IKRA 
+Kelas: 5IKRB
 
 ---
 

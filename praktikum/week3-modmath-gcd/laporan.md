@@ -2,7 +2,7 @@
 
 **Nama:** Mohammad Nasrulloh  
 **NIM:** 230202815  
-**Kelas:** 2IKRA  
+**Kelas:** 5IKRB
 
 ---
 
