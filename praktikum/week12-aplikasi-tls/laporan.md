@@ -2,7 +2,7 @@
 
 **Nama:** Mohammad Nasrulloh  
 **NIM:** 230202815  
-**Kelas:** 5IKRA  
+**Kelas:** 5IKRB
 **Mata Kuliah:** Kriptografi  
 **Topik:** Aplikasi TLS & E‑Commerce
 
