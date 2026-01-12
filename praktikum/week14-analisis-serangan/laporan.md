@@ -137,5 +137,5 @@ commit week14-analisis-serangan
 Author: Mohammad Nasrulloh <srullasrul59@gmail.com>
 Date:   2026-01-12
 
-    week14-tinychain: Analisis Serangan
+    week14-analisis-serangan: Analisis Serangan
 ```

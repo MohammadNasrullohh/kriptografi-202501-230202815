@@ -1,95 +1,119 @@
-# Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+# 📘 Week 15 – Proyek Kelompok TinyCoin ERC20
+
+**Mata Kuliah:** Kriptografi  
+**Nama:** Mohammad Nasrulloh  
+**NIM:** 230202815  
 
 ---
 
-## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+## 📌 Deskripsi Proyek
+
+TinyCoin adalah implementasi **smart contract ERC20**
+menggunakan bahasa **Solidity** dan library **OpenZeppelin**.
+Proyek ini dibuat untuk memahami konsep token kriptografi,
+mekanisme transfer token, serta analisis keamanan dasar
+pada blockchain Ethereum.
 
 ---
 
-## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+## 🎯 Tujuan Pembelajaran
+
+Setelah menyelesaikan proyek ini, mahasiswa mampu:
+1. Mengembangkan smart contract ERC20
+2. Melakukan deployment kontrak ke EVM
+3. Menguji fungsi utama token
+4. Mendokumentasikan proyek menggunakan Git
+5. Melakukan analisis keamanan dasar smart contract
 
 ---
 
-## 3. Alat dan Bahan
-(- Python 3.x  
-- Visual Studio Code / editor lain  
-- Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+## ⚙️ Teknologi yang Digunakan
+
+- Solidity ^0.8.x  
+- OpenZeppelin ERC20  
+- Remix IDE  
+- Ethereum Virtual Machine (EVM)
 
 ---
 
-## 4. Langkah Percobaan
-(Tuliskan langkah yang dilakukan sesuai instruksi.  
-Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
-2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+## 📜 Gambaran Smart Contract TinyCoin
+
+TinyCoin merupakan token standar **ERC20** dengan karakteristik:
+- Token Name: **TinyCoin**
+- Symbol: **TNC**
+- Desimal: **18**
+- Initial supply dicetak ke alamat deployer saat kontrak dibuat
+- Menggunakan OpenZeppelin untuk keamanan dan standarisasi
 
 ---
 
-## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+## 🚀 Proses Deployment
 
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
+Smart contract dikompilasi dan dideploy menggunakan **Remix IDE**
+pada lingkungan **JavaScript VM / testnet Ethereum**.
+Setelah proses deployment berhasil, kontrak siap diuji
+menggunakan fungsi-fungsi ERC20 yang tersedia.
+
+---
+
+## 🧪 Hasil Pengujian
+
+![Hasil 1](screenshots/hasil1.png)
+![Hasil 2](screenshots/hasil2.png)
+![Hasil 3](screenshots/hasil3.png)
+![Hasil 4](screenshots/hasil4.png)
+![Hasil 5](screenshots/hasil5.png)
+
+---
+
+## 🔐 Analisis Keamanan Dasar
+
+Beberapa aspek keamanan yang dianalisis:
+- **Overflow dan Underflow**  
+  Tidak terjadi karena Solidity versi ≥ 0.8 memiliki proteksi otomatis.
+- **Reentrancy Attack**  
+  Kontrak tidak memiliki fungsi kompleks yang memicu reentrancy.
+- **Unauthorized Minting**  
+  Token hanya dicetak satu kali pada constructor.
+
+Secara keseluruhan, smart contract tergolong aman
+untuk skala pembelajaran.
+
+---
+
+## 📝 Dokumentasi Teknis
+
+Dokumentasi teknis lengkap meliputi:
+- Penjelasan kontrak ERC20 TinyCoin
+- Hasil pengujian fungsi utama
+- Jawaban pertanyaan diskusi
+- Analisis keamanan dasar
+
+
+---
+
+## 📚 Referensi
+
+- Stallings, W. (2017). *Cryptography and Network Security*  
+- Stinson, D. (2019). *Cryptography: Theory and Practice*  
+- OpenZeppelin Documentation  
+
+---
+
+## ✅ Kesimpulan
+
+Implementasi TinyCoin ERC20 berhasil dilakukan dengan baik.
+Smart contract dapat dideploy, diuji, dan berfungsi sesuai standar ERC20.
+Dokumentasi dan bukti pengujian telah dilampirkan secara lengkap.
+
+---
+
+## Commit Log
+
 ```
-)
+commit week15-tinycoin-erc20
+Author: Mohammad Nasrulloh <srullasrul59@gmail.com>
+Date:   2026-01-12
 
----
-
-## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
-
-Hasil eksekusi program Caesar Cipher:
-
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
-
----
-
-## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
----
-
-## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
-
----
-
-## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
-
----
-
-## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
-
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week15-tinycoin-erc20: Proyek Kelompok TinyCoin ERC20
 ```
